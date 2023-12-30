@@ -10,15 +10,26 @@
             height: 360px;
             width: 100%;
             object-fit:cover;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
+    {%include 'nav.html' %}
+    <img class="image-fluid" id="banner" src="/static/banner.jpg" height="320">
     <div class="container">
         <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-        <img class="image-fluid" id="banner" src="/static/banner.jpg" height="320">
-        <h2 class="text-center mt-2 mb-4">About site</h2>
-        <p class="Lead">This is job careers site for people to find job.</p>
+
+        <div class="row" style="margin-bottom:16px">
+            <div class="col-md-6">
+        <p class="Lead">
+            This is job careers site for people to find job.
+        </p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="/static/people.jpg" style="height: 320px; border-radius: 4px;">
+            </div>
+        </div>
         <h2 class="text-center mt-2 mb-4">Open positions</h2>
         <div>
             {% for job in jobs %}
@@ -27,8 +38,8 @@
         </div>
         <div class="text-center">
             <button class="btn btn-primary btn-lg">Contact us</button>
-                <p class="mt-4">Copyright 2023 Laurynas</p>
         </div>
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
